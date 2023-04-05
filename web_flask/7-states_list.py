@@ -3,19 +3,20 @@
 from flask import render_template
 from flask import Flask
 from models import storage
+from models.state import State
 
 
 app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def close_session():
+def close_session(self):
     storage.close()
 
 
 @app.route('/states_list', strict_slashes=False)
 def display_states():
-    states = storage.all("State")
+    states = storage.all(State)
     return render_template('7-states_list.html', states=states)
 
 
