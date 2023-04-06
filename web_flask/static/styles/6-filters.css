@@ -68,7 +68,7 @@ button:hover {
     display: none;
     position: absolute;
     margin-top: 10px;
-	overflow: scroll;
+	overflow: hidden;
 }
 
 .locations ul {
