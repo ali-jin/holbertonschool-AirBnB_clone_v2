@@ -18,17 +18,11 @@ def close_session(self):
 @app.route('/states', strict_slashes=False)
 @app.route('/states/<id>', strict_slashes=False)
 def display_states(id=None):
-    """display cities by states"""
+    """display states and cities"""
     states = storage.all(State)
-    return render_template('9-states.html', states=states)
-
-
-@app.route('/states/<id>', strict_slashes=False)
-def display_state_is(id):
-    for state in storage.all(State).values():
-        if state.id == id:
-            return render_template('9-states.html', states=state)
-    return render_template('9-states.html')
+    if id:
+        id = 'State.' + id
+    return render_template('9-states.html', states=states, id=id)
 
 
 if __name__ == '__main__':
