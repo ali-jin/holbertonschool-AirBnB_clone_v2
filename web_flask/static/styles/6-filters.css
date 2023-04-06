@@ -68,7 +68,12 @@ button:hover {
     display: none;
     position: absolute;
     margin-top: 10px;
-	overflow: hidden;
+	overflow: scroll;
+	display: none;
+}
+
+.popover::-webkit-scrollbar {
+	display: none;
 }
 
 .locations ul {
@@ -82,6 +87,10 @@ button:hover {
 .locations li {
     list-style: none;
     margin: 0 auto 6px 30px;
+}
+
+strong {
+	font-size: large;
 }
 
 .amenities li {
